@@ -1,0 +1,34 @@
+.card-list_item {
+    margin-bottom: 15px;
+    padding: 7px 9px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-list_item:last-of-type{
+    margin-bottom: 0;
+}
+
+.btn {
+    background: none;
+}
+
+.delete {
+    width: 30px;
+    height: 30px;
+    background-image: url("./basket.svg");
+    background-size: contain;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}

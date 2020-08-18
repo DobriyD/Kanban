@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    height: 55px;
+    min-height: 55px;
+    background-color: #0067A3;
+    color: white;
+}
+
+.header_title {
+    font-size: 28px;
+    line-height: 33px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.header_user {
+    height: 100%;
+    margin-left: auto;
+}

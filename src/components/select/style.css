@@ -1,0 +1,56 @@
+.select {
+    width: 100%;
+    outline: none;
+}
+
+.select_preview {
+    position: relative;
+    padding: 7px 9px;
+    margin-bottom: 7px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+    background: #dcd8d8;
+    border-radius: 5px;
+}
+
+.select_preview:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 10px;
+    top: 10px;
+
+    background-image: url("./arrow.svg");
+    background-size: contain;
+}
+
+.select_preview--active:after {
+    transform: rotate(180deg);
+}
+
+.select_list {
+    display: none;
+    border-radius: 5px;
+    background: white;
+    overflow: hidden;
+}
+
+.select_list--show {
+    display: block;
+}
+
+.selected-list_item {
+    padding: 7px 9px;
+    font-size: 18px;
+    background: white;
+    list-style: none;
+    cursor: pointer;
+}
+
+.selected-list_item:hover {
+    background: #DEDEDE;
+}
+

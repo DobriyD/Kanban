@@ -1,0 +1,27 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 0 18px;
+    height: 55px;
+    min-height: 55px;
+
+    background: #0067A3;
+    color: white;
+}
+
+.footer_left {
+    display: flex;
+    font-size: 18px;
+}
+
+.footer_info {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 615px){
+    .footer_info, .footer_left {
+        display: none;
+    }
+}

@@ -1,0 +1,77 @@
+.user-menu {
+    height: 100%;
+    position: relative;
+}
+
+.user-menu__view {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+}
+
+.user-menu__avatar {
+    margin-right: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.user-menu__arrow {
+    width: 12px;
+    height: 8px;
+    background: url("Vector.svg");
+}
+
+.user-menu__arrow--rotate {
+    transform: rotate(-180deg);
+}
+
+.user__dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: -80px;
+
+    z-index: 1000;
+}
+
+.user__dropdown--show {
+    display: block;
+}
+
+.user-menu__list {
+    position: relative;
+    padding: 4px;
+    width: 140px;
+    font-size: 14px;
+    color: black;
+    background: white;
+    border-radius: 5px;
+}
+
+.user-menu__list::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -6px;
+    left: 93px;
+    width: 16px;
+    height: 16px;
+
+    transform: rotate(45deg);
+
+    background: white;
+}
+
+.user-menu__list-item {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.user-menu__list-item:hover {
+    color: white;
+    background-color: gray;
+}
