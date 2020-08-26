@@ -24,7 +24,7 @@ const Card = (props) => {
     // const btn = taskTitle < 1 ? submitButton : button;
 
     return (
-        <div className='card'>
+        <div className='card' onBlur={console.log('1')}>
             <div className='card_title'><Link to={'/' + link} className='card_link'>{title}</Link></div>
             <ul className='card_list'>
                 { content }

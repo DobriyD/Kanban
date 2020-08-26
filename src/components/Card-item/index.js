@@ -1,12 +1,12 @@
 import React from "react";
 import './style.css'
 
-function CardItem({title}) {
+function CardItem({title, id, deleteTask}) {
 
     return (
-        <li className='card-list_item'>
+        <li id={'1'} className='card-list_item'>
             <p className='text'>{title}</p>
-            <button className='btn delete' onClick={this.deleteTask}/>
+            <button className='btn delete' onClick={deleteTask}/>
         </li>
     )
 }

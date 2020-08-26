@@ -61,7 +61,7 @@ class BacklogCard extends Component{
         let listContent;
 
         if (items.length > 0) {
-            listContent = items.map(({id, title}) => <CardItem key={id} title={title} deleteTask={this.deleteTask}/>);
+            listContent = items.map(({index, title}) => <CardItem key={index} id={index} title={title} deleteTask={this.deleteTask}/>);
         } else {
             listContent = <span>Task not found</span>;
         }
@@ -81,6 +81,7 @@ class BacklogCard extends Component{
                 showAction={this.showInput}
                 title='Backlog'
                 link='backlog'
+                saveTasks={this.saveTasks}
             >
                 { listContent }
             </Card>

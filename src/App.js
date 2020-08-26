@@ -90,12 +90,12 @@ class App extends Component {
     };
 
     deleteTask = event => {
-        // const idElem = event.target.id;
-        // this.state.tasks.splice(idElem, 1);
-        // this.setState({
-        //     tasks: this.state.tasks,
-        // })
-        console.log('delete')
+        const idElem = event.target.id;
+        this.state.tasks.splice(+idElem, 1);
+        this.setState({
+            tasks: this.state.tasks,
+        });
+        console.log(idElem)
     };
 
     render() {
@@ -106,10 +106,10 @@ class App extends Component {
                     <Header/>
                     <div className='board'>
                         <Route path='/' exact>
-                            <BacklogCard addTask={this.addBacklog} items={backlog}/>
-                            <ReadyCard addTask={this.addReady} items={ready} selectItems={backlog}/>
-                            <InProgressCard addTask={this.addInProgress} items={inProgress} selectItems={ready}/>
-                            <FinishedCard addTask={this.addFinished} items={finished} selectItems={inProgress}/>
+                            <BacklogCard addTask={this.addBacklog} items={backlog} deleteTask={this.deleteTask}/>
+                            <ReadyCard addTask={this.addReady} items={ready} selectItems={backlog} deleteTask={this.deleteTask}/>
+                            <InProgressCard addTask={this.addInProgress} items={inProgress} selectItems={ready} deleteTask={this.deleteTask}/>
+                            <FinishedCard addTask={this.addFinished} items={finished} selectItems={inProgress} deleteTask={this.deleteTask}/>
                         </Route>
                         <Route
                             path='/:type'
