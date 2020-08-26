@@ -51,7 +51,7 @@ class BacklogCard extends Component{
         })
     };
 
-    delTask = () => {
+    deleteTask = () => {
         this.props.deleteTask();
     };
 
@@ -61,7 +61,7 @@ class BacklogCard extends Component{
         let listContent;
 
         if (items.length > 0) {
-            listContent = items.map(({id, title}) => <CardItem key={id} title={title} deleteTask={this.delTask}/>);
+            listContent = items.map(({id, title}) => <CardItem key={id} title={title} deleteTask={this.deleteTask}/>);
         } else {
             listContent = <span>Task not found</span>;
         }
