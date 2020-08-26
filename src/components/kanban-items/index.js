@@ -51,10 +51,9 @@ class BacklogCard extends Component{
         })
     };
 
-    deleteTask = () => {
+    delTask = () => {
         this.props.deleteTask();
     };
-
 
     render() {
         const {items} = this.props;
@@ -62,15 +61,10 @@ class BacklogCard extends Component{
         let listContent;
 
         if (items.length > 0) {
-            listContent = items.map(({id, title}) => <CardItem key={id} title={title}/>);
+            listContent = items.map(({id, title}) => <CardItem key={id} title={title} deleteTask={this.delTask}/>);
         } else {
             listContent = <span>Task not found</span>;
         }
-
-        const deleteTask =
-            <CardItem
-                deleteTask={this.deleteTask}
-            />
 
         const taskInput =
             <CardInput
@@ -87,7 +81,6 @@ class BacklogCard extends Component{
                 showAction={this.showInput}
                 title='Backlog'
                 link='backlog'
-                deleteTask={deleteTask}
             >
                 { listContent }
             </Card>
