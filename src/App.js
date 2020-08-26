@@ -10,6 +10,11 @@ import TasksList from "./components/TaskList";
 import LocalStorageService from '../src/localStorageService'
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.deleteTask = this.deleteTask.bind(this);
+    }
+
     lsService = new LocalStorageService();
 
     state = {
@@ -76,12 +81,20 @@ class App extends Component {
     };
 
     deleteAllTasks = () => {
-        localStorage.removeItem('backlog');
+        localStorage.removeItem('tasks');
         this.setState({
             backlog: [],
             ready: [],
             inProgress: [],
             finished: []
+        })
+    };
+
+    deleteTask = event => {
+        const idElem = event.target.id;
+        this.state.tasks.splice(idElem, 1);
+        this.setState({
+            tasks: this.state.tasks,
         })
     };
 
@@ -93,7 +106,7 @@ class App extends Component {
                     <Header/>
                     <div className='board'>
                         <Route path='/' exact>
-                            <BacklogCard addTask={this.addBacklog} items={backlog}/>
+                            <BacklogCard addTask={this.addBacklog} items={backlog} deleteTask={this.deleteTask}/>
                             <ReadyCard addTask={this.addReady} items={ready} selectItems={backlog}/>
                             <InProgressCard addTask={this.addInProgress} items={inProgress} selectItems={ready}/>
                             <FinishedCard addTask={this.addFinished} items={finished} selectItems={inProgress}/>

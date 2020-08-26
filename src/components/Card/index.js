@@ -21,6 +21,8 @@ const Card = (props) => {
 
     const action = isShowAction ? actionComponent : null;
 
+    // const btn = taskTitle < 1 ? submitButton : button;
+
     return (
         <div className='card'>
             <div className='card_title'><Link to={'/' + link} className='card_link'>{title}</Link></div>
@@ -29,8 +31,8 @@ const Card = (props) => {
             </ul>
             {action}
             <div className='buttons'>
-                {button}
-                {submitButton}
+                 {button}
+                 {submitButton}
             </div>
         </div>
     )

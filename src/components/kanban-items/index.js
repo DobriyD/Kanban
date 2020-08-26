@@ -51,6 +51,10 @@ class BacklogCard extends Component{
         })
     };
 
+    deleteTask = () => {
+        console.log('delete')
+    };
+
 
     render() {
         const {items} = this.props;
@@ -78,10 +82,10 @@ class BacklogCard extends Component{
                 showAction={this.showInput}
                 title='Backlog'
                 link='backlog'
+                deleteTask={this.deleteTask}
             >
                 { listContent }
             </Card>
-
         )
 
     }
