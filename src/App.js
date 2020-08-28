@@ -10,9 +10,6 @@ import TasksList from "./components/TaskList";
 import LocalStorageService from '../src/localStorageService'
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     lsService = new LocalStorageService();
 
@@ -91,11 +88,12 @@ class App extends Component {
 
     deleteTask = event => {
         const idElem = event.target.id;
-        this.state.tasks.splice(+idElem, 1);
+        this.state.backlog.splice(+idElem, 1);
         this.setState({
             tasks: this.state.tasks,
         });
-        console.log(idElem)
+        localStorage.setItem('tasks', this.state.tasks);
+        console.log(this.state)
     };
 
     render() {

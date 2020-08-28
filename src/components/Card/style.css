@@ -65,9 +65,16 @@
 .submit_button {
     align-items: center;
     padding: 5px;
+    margin-top: 5px;
     font-size: 18px;
     border: none;
     outline: none;
     border-radius: 5px;
     cursor: pointer;
+    color: white;
+    background: #0079BF;
+}
+
+.submit_button:hover {
+    background: #0067A3;
 }
