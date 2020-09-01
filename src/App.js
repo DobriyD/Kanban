@@ -90,9 +90,9 @@ class App extends Component {
         const idElem = event.target.id;
         this.state.backlog.splice(+idElem, 1);
         this.setState({
-            tasks: this.state.tasks,
+            backlog: this.state.backlog,
         });
-        localStorage.setItem('tasks', this.state.tasks);
+        this.lsService.updateTasks('backlog', this.state.backlog);
         console.log(this.state)
     };
 
